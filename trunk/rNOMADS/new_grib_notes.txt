@@ -1,0 +1,13 @@
+To use the new Grib utility we will have to emulate a browser using Selenium.
+1.  Get Selenium here: https://selenium-release.storage.googleapis.com/index.html?path=3.9/
+you want the standalone jar file
+2. Get Gecko if you want to run Firefox: sudo apt-get install firefox-geckodriver
+3.  Install RSelenium in R
+
+Then fire up your Selenium server:
+java -jar selenium-server-standalone-3.9.1.jar
+
+Now you can start navigating with R
+
+remDr <- remoteDriver(browserName="firefox", port=4444)
+remDr$open(silent=T)
